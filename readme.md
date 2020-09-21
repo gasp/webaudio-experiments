@@ -1,11 +1,6 @@
-# a minimalist startup kit
+# webaudio experiments
 
-- editorconfig
-- webpack
-- babel
-- prettier
+support for the webaudio course.
 
-# to do
+`npm i && npm start`
 
-- eslint
-- flowjs / typescript
