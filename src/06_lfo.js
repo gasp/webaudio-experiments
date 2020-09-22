@@ -18,8 +18,16 @@ export default function() {
 
   lfo.connect(amp.gain)
   osc.connect(amp).connect(context.destination)
-  lfo.start()
-  osc.start()
+
+
+
+  const button = document.createElement('button')
+  button.innerText = 'play'
+  button.addEventListener('click', () => {
+    lfo.start()
+    osc.start()
+  })
+
 
   const rangeO = document.createElement('input')
   rangeO.type = 'range'
@@ -45,6 +53,7 @@ export default function() {
   section.append(chapter)
   section.append(rangeO)
   section.append(rangeL)
+  section.append(button)
 
   return section
 }

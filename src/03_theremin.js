@@ -8,7 +8,13 @@ export default function() {
   const oscillator = context.createOscillator()
   oscillator.frequency.value = 100
   oscillator.connect(context.destination)
-  oscillator.start()
+
+  const button = document.createElement('button')
+  button.innerText = 'play'
+  button.addEventListener('click', () => {
+    oscillator.start()
+    section.append(range)
+  })
 
   const range = document.createElement('input')
   range.type = 'range'
@@ -21,8 +27,10 @@ export default function() {
   range.style.width = '100%'
 
   const section = document.createElement('section')
+  section.append(button)
   section.append(chapter)
-  section.append(range)
+
+
 
   return section
 }
